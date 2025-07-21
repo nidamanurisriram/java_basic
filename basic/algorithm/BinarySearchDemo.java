@@ -27,22 +27,17 @@ public class BinarySearchDemo {
 		if(sampleData[mid] == searchElement) {
 			return mid;
 		}
-		
-		else if(sampleData[mid] > searchElement) {
+	
 			
-			for(int i = low; i< mid; i++) {
-				if(sampleData[i] == searchElement) {
-					return i;
-				}
+		for(int i = low; i< mid; i++) {
+			if(sampleData[i] == searchElement) {
+				return i;
 			}
-			
 		}
 		
-		else if (sampleData[mid] < searchElement) {
-			for(int i = mid+1; i<=high; i++) {
-				if(sampleData[i] == searchElement) {
-					return i;
-				}
+		for(int i = mid+1; i<=high; i++) {
+			if(sampleData[i] == searchElement) {
+				return i;
 			}
 		}
 		
