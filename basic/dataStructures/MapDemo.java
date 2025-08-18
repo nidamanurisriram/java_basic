@@ -6,25 +6,7 @@
 
 package dataStructures;
 
-import java.util.HashMap;
-import java.util.Map;
-
-class HashMapDemo {
-	
-	public void hashMapDemo() {
-		
-		HashMap<Integer, String> products = new HashMap<Integer, String>();
-		
-		products.put(1, "Telephone");
-		products.put(2, "Mobile");
-		products.put(3, "Laptop");
-		products.put(4, "Computer");
-		products.put(5, "Television");
-		
-		System.out.println("Printing hashmap data elements " + products);
-	}
-	
-}
+import java.util.*;
 
 public class MapDemo {
 	
@@ -32,19 +14,11 @@ public class MapDemo {
 		
 		Map<Integer, String> products = new HashMap<Integer, String>();
 		
-		System.out.println("Method to add element using put()");
-		
 		products.put(1, "Telephone");
 		products.put(2, "Mobile");
 		products.put(3, "Laptop");
 		products.put(4, "Computer");
 		products.put(5, "Television");
-		
-		System.out.println(products);
-		
-		System.out.println("Method to remove element using remove() refer to key");
-		
-		products.remove(1);
 		
 		System.out.println(products);
 		
@@ -66,9 +40,29 @@ public class MapDemo {
 			System.out.println("Key "+ key + " data element is " + products.get(key) );
 		}
 		
-		HashMapDemo demo = new HashMapDemo();
+		HashMap<Integer, String> hm = new HashMap<Integer, String>();
 		
-		demo.hashMapDemo();
+		hm.putAll(products);
+		
+		System.out.println("HashMap data elements       : " + hm);
+		
+		LinkedHashMap<Integer, String> lh = new LinkedHashMap<Integer, String>();
+		
+		lh.putAll(products);
+		
+		System.out.println("LinkedHashMap data elements : " + lh);
+		
+		SortedMap<Integer, String> sm = new TreeMap<Integer, String>();
+		
+		sm.putAll(products);
+		
+		System.out.println("SortedMap data elements     : " + sm);
+		
+		Hashtable<Integer, String> ht = new Hashtable<Integer, String>();
+	
+		ht.putAll(products);
+		
+		System.out.println("HashTable data elements     : " + ht);
 		
 	}
 

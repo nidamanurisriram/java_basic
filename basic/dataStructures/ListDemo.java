@@ -31,135 +31,70 @@ package dataStructures;
 
 import java.util.*;
 
-class ArrayListDemo {
-	
-	public ArrayListDemo() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public void vehicles() {
-		
-		ArrayList<String> vehicles = new ArrayList<String>();
-		
-		vehicles.add("Bike");
-		vehicles.add("Car");
-		vehicles.add("Truck");
-		
-		System.out.println("Printing the all elements of array list");
-		
-		System.out.println(vehicles);
-		
-		System.out.println("Printing each element of array list using simple for loop");
-		
-		for(int i = 0; i<vehicles.size(); i++) {
-			System.out.println(vehicles.get(i));
-		}
-		
-		System.out.println("Printing each element of array list using simple for loop and converting it to array");
-		
-		Object[] vehicle = vehicles.toArray();
-		
-		for(int i = 0; i<vehicle.length; i++) {
-			System.out.println(vehicle[i]);
-		}
-		
-	}
-	
-}
-
-class LinkedListDemo {
-	
-	public LinkedListDemo() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public void fecilities() {
-		
-		LinkedList<String> facilities = new LinkedList<String>();
-		
-		facilities.add("Games");
-		facilities.add("Music");
-		facilities.add("Campign");
-		
-		System.out.println("Printing the all elements of linked list");
-		
-		System.out.println(facilities);
-		
-		System.out.println("Printing each element of linked list using simple for loop");
-		
-		for(int i = 0; i<facilities.size(); i++) {
-			System.out.println(facilities.get(i));
-		}
-		
-		System.out.println("Printing each element of linked list using simple for loop and converting it to array");
-		
-		Object[] facilitie = facilities.toArray();
-		
-		for(int i = 0; i<facilitie.length; i++) {
-			System.out.println(facilitie[i]);
-		}
-		
-	}
-	
-}
-
 public class ListDemo {
 	
 	public static void main(String[] args) {
 		
-		List<String> hobbies = new ArrayList<String>();
+		List<Integer> numbers = new ArrayList<Integer>();
 		
-		hobbies.add("Music");
-		hobbies.add("Chess");
-		hobbies.add("Cricket");
+		numbers.add(1);
+		numbers.add(2);
+		numbers.add(3);
+		numbers.add(4);
+		numbers.add(5);
 		
-		System.out.println("Printing the all elements of a list");
+		System.out.println(numbers);
 		
-		System.out.println(hobbies);
+		System.out.print("For loop : ");
 		
-		System.out.println("Printing each element of the list using simple for loop");
+		int length = numbers.size();
 		
-		for(int i=0; i<hobbies.size(); i++) {
-			System.out.println(hobbies.get(i));
+		for(int i=0; i<=length-1; i++) {
+			System.out.print(numbers.get(i) + " ");
 		}
 		
-		System.out.println("Printing each element of the list by converting it to array and using for loop");
+		System.out.print("\n");
 		
-		Object hobbiesArray[] = hobbies.toArray();
+		System.out.print("Iterator : ");
 		
-		for(int i=0; i<hobbiesArray.length; i++) {
-			System.out.println(hobbiesArray[i]);
-		}
-		
-		System.out.println("Printing each element of the list using enhanced for loop");
-		
-		for(Object hobbie : hobbies) {
-			System.out.println(hobbie);
-		}
-		
-		System.out.println("Printing each element of the list using iterator and while loop");
-		
-		Iterator<String> iterator = hobbies.iterator();
+		Iterator<Integer> iterator = numbers.iterator();
 		
 		while(iterator.hasNext()) {
-			System.out.println(iterator.next());
+			System.out.print(iterator.next() + " ");
 		}
 		
-		System.out.println("Printing each element of the list using forEach method and lambda expression");
+		System.out.print("\n");
 		
-		hobbies.forEach(hobbie -> System.out.println(hobbie));
+		System.out.print("For each : ");
 		
-		System.out.println("\n" + "Array List Demo :");
+		numbers.forEach((number) -> System.out.print(number + " "));
 		
-		ArrayListDemo arrayListDemo = new ArrayListDemo();
+		System.out.println("");
 		
-		arrayListDemo.vehicles();
+		ArrayList<Integer> al = new ArrayList<Integer>();
 		
-		System.out.println("\n" + "Linked List Demo :");
+		al.addAll(numbers);
 		
-		LinkedListDemo linkedListDemo = new LinkedListDemo();
+		System.out.println("ArrayList data elements  : " + al);
 		
-		linkedListDemo.fecilities();
+		LinkedList<Integer> ll = new LinkedList<Integer>();
+		
+		ll.addAll(numbers);
+		
+		System.out.println("LinkedList data elements : " + ll);
+		
+		Vector<Integer> ve = new Vector<Integer>();
+		
+		ve.addAll(numbers);
+		
+		System.out.println("Vector data elements     : " +ve);
+		
+		Stack<Integer> st = new Stack<Integer>();
+		
+		st.addAll(numbers);
+		
+		System.out.println("Stack data elements      : " + st);
+		
 		
 	}
 

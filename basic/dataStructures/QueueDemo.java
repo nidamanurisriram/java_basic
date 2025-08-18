@@ -4,55 +4,55 @@
 
 package dataStructures;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class QueueDemo {
 	
 	public static void main(String[] args) {
 		
-		Queue<String> gadgets = new LinkedList<String>();
+		Queue<Integer> numbers = new PriorityQueue<Integer>();
 		
-		System.out.println("Adding data elements to queue");
+		numbers.add(1);
+		numbers.add(2);
+		numbers.add(3);
+		numbers.add(4);
+		numbers.add(5);
 		
-		gadgets.add("Mobile");
-		gadgets.add("Computer");
-		gadgets.add("Television");
+		System.out.println(numbers);
 		
-		System.out.println("Printing data elements of a queue using enhanced for loop");
+		System.out.print("Iterator : ");
 		
-		for(Object gadget : gadgets) {
-			System.out.println(gadget);
-		}
-		
-		System.out.println("Printing data elements of a queue using iterator and while loop");
-		
-		Iterator<String> iterator = gadgets.iterator();
+		Iterator<Integer> iterator = numbers.iterator();
 		
 		while(iterator.hasNext()) {
-			System.out.println(iterator.next());
+			System.out.print(iterator.next() + " ");
 		}
 		
-		System.out.println("Printing data elements of queue using forEach method and lambda expression");
+		System.out.print("\n");
 		
-		gadgets.forEach(gadget -> System.out.println(gadget));
+		System.out.print("For each : ");
 		
-		System.out.println("To retrieve the head element");
+		numbers.forEach((number) -> System.out.print(number + " "));
 		
-		System.out.println(gadgets.peek());
+		System.out.println("");
 		
-		System.out.println("Remove data elements in queue");
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 		
-		gadgets.poll(); // To remove the head element
+		pq.addAll(numbers);
 		
-		gadgets.remove(); // Remove single element
+		System.out.println("PriorityQueue data elements : " + pq);
 		
-		Iterator<String> iterator1 = gadgets.iterator();
+		Deque<Integer> dq = new ArrayDeque<Integer>();
 		
-		while(iterator1.hasNext()) {
-			System.out.println(iterator1.next());
-		}
+		dq.addAll(numbers);
+		
+		System.out.println("Deque data elements         : " + dq);
+		
+		ArrayDeque<Integer> ad = new ArrayDeque<Integer>();
+		
+		ad.addAll(numbers);
+		
+		System.out.println("ArrayDeque data elements    : " + ad);
 		
 	}
 

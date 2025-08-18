@@ -8,14 +8,11 @@
 
 package dataStructures;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
-class HashSetDemo {
+public class SetDemo {
 	
-	public void hashSetDemo() {
+	public static void main(String[] args) {
 		
 		Set<Character> alphabets = new HashSet<Character>();
 		
@@ -24,66 +21,48 @@ class HashSetDemo {
 		alphabets.add('c');
 		alphabets.add('d');
 		alphabets.add('e');
-		alphabets.add('f');
 		
-		System.out.println("Printing all the hashset elements using the enhanced for loop");
+		System.out.println(alphabets);
 		
-		for(Character alphabet : alphabets) {
-			System.out.println(alphabet);
-		}
-		
-		System.out.println("Printing all the hashset elements using the iterator and while loop");
+		System.out.print("Iterator : ");
 		
 		Iterator<Character> iterator = alphabets.iterator();
 		
 		while(iterator.hasNext()) {
-			System.out.println(iterator.next());
+			System.out.print(iterator.next() + " ");
 		}
 		
-		System.out.println("Printing all the set elements using the forEach method and lambda expression");
+		System.out.print("\n");
 		
-		alphabets.forEach(c -> System.out.println(c));
-	}
-	
-}
-
-class TreeSetDemo {
-	
-	public void treeSetDemo() {
+		System.out.print("For each : ");
 		
-		Set<Integer> randomNumbers = new TreeSet<Integer>();
+		alphabets.forEach((alphabet) -> System.out.print(alphabet + " "));
 		
-		randomNumbers.add(41);
-		randomNumbers.add(16);
-		randomNumbers.add(14);
-		randomNumbers.add(46);
-		randomNumbers.add(54);
-		randomNumbers.add(64);
+		System.out.println("");
 		
-		System.out.println("Printing all the treeset elemenets using the enhanced for loop");
+		HashSet<Character> hs = new HashSet<Character>();
 		
-		for(Integer randomNumber : randomNumbers) {
-			System.out.println(randomNumber);
-		}
+		hs.addAll(alphabets);
 		
-		System.out.println("Printing all the treeset elements using the lambda expression");
+		System.out.println("HashSet data elements       : " + hs);
 		
-		randomNumbers.forEach(n -> System.out.println(n));
-	}
-	
-}
-
-public class SetDemo {
-	
-	public static void main(String[] args) {
+		LinkedHashSet<Character> lh = new LinkedHashSet<Character>();
 		
-		HashSetDemo hashSetDemo = new HashSetDemo();
+		lh.addAll(alphabets);
 		
-		hashSetDemo.hashSetDemo();
+		System.out.println("LinkedHashSet data elements : " + lh);
 		
-		TreeSetDemo treeSetDemo = new TreeSetDemo();
+		SortedSet<Character> ss = new TreeSet<Character>();
 		
-		treeSetDemo.treeSetDemo();
+		ss.addAll(alphabets);
+		
+		System.out.println("SortedSet data elements     : " + ss);
+		
+		TreeSet<Character> ts = new TreeSet<Character>();
+		
+		System.out.println("TreeSet data elements       : " + ts);
+		
+		ts.addAll(alphabets);
 		
 	}
 
